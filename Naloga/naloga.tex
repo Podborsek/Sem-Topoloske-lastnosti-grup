@@ -1,0 +1,72 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[slovene]{babel}
+\usepackage{amsfonts,amssymb,amsmath}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{graphicx}
+
+
+\def\N{\mathbb{N}} % mnozica naravnih stevil
+\def\Z{\mathbb{Z}} % mnozica celih stevil
+\def\Q{\mathbb{Q}} % mnozica racionalnih stevil
+\def\R{\mathbb{R}} % mnozica realnih stevil
+\def\C{\mathbb{C}} % mnozica kompleksnih stevil
+\newcommand{\geslo}[2]{\noindent\textbf{#1} \quad \hangindent=1cm #2\\[{-1}pc]}
+
+\def\qed{$\hfill\Box$}   % konec dokaza
+\def\qedm{\qquad\Box}   % konec dokaza v matematičnem načinu
+\newtheorem{izrek}{Izrek}
+\newtheorem{trditev}{Trditev}
+\newtheorem{posledica}{Posledica}
+\newtheorem{lema}{Lema}
+\newtheorem{pripomba}{Pripomba}
+\newtheorem{definicija}{Definicija}
+\newtheorem{zgled}{Zgled}
+
+\title{Topološke lastnosti grup \\ 
+\Large Seminar}
+\author{Gašper Rotar \\
+Fakulteta za matematiko in fiziko}
+
+\begin{document}
+\maketitle
+
+\section{Uvod}
+
+V tej seminarski bomo obravnavali uporabe topoloških pristopov za študij lastnosti grup.
+
+
+
+\section{Dva preprosta izreka}
+
+\begin{trditev}
+    Naj bo $G$ grupa in $\Delta(G) = \{(g,g) \mid g \in G \} \subseteq G \times G$.
+    Grupa $G$ je komutativna natanko takrat, ko je $\Delta(G)$ podgrupa edinka grupe $G$, $\Delta(G) \triangleleft G$.
+\end{trditev}
+
+
+\noindent
+{\em Dokaz:\/}
+    \begin{itemize}
+        \item[($\Rightarrow$)] Ker je $G$ komutativna je seveda tudi $G \times G$ komutativna. Torej je vsaka njena podgrupa edinka.
+            Zdaj je trebna le še pokazati, da je $\Delta(G) \le G \times G$, kar je enostavno. Naj bosta $a = (\alpha, \alpha), b = (\beta, \beta) \in \Delta(G)$, potem:
+            \begin{gather*}
+                a + b = (\alpha, \alpha) + (\beta, \beta) = (\alpha + \beta, \alpha + \beta) \in \Delta(G), \\
+                (\alpha, \alpha) + (\alpha^{-1}, \alpha^{-1}) = (\alpha \cdot \alpha^{-1}, \alpha \cdot \alpha^{-1}) = (1,1).
+            \end{gather*}
+            Vidimo, da je $\Delta(G)$ zaprta za opreacijo, inverz $(\alpha, \alpha)$ pa je $(\alpha^{-1}, \alpha^{-1}) \in \Delta(G)$, torej zaprta tudi za invertiranje.
+        \item[($\Leftarrow$)] Naj bosta $\alpha, \beta$ elementa grupe $G$ z enoto $1$. Potem so $(\alpha,1), (\alpha^{-1}, 1), (\beta, \beta) \in G \times G$ in
+            $(\alpha,1)^{-1} = (\alpha^{-1},1)$ ter $(\beta, \beta) \in \Delta(G)$. Potem lahko izračunamo:
+            \[(\alpha,1) \cdot (\beta, \beta) \cdot (\alpha^{-1}, 1) = (\alpha\beta\alpha^{-1}, \beta).\]
+            Ker je $\Delta(G)$ ednika je zaprta za invertiranje, torej je $\alpha\beta\alpha^{-1} = \beta \Rightarrow \alpha\beta = \beta\alpha$
+    \end{itemize}
+\qed
+
+
+
+
+
+
+\end{document}
