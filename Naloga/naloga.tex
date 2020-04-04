@@ -41,6 +41,20 @@ V tej seminarski bomo obravnavali uporabe topoloških pristopov za študij lastn
 
 \section{Dva preprosta izreka}
 
+\begin{definicija}
+    Naj bo $N$ podgrupa grupe $G$. $N$ je podgrupa edinka grupe $G$, označimo $N \triangleleft G$, če za vse $a \in G$ in $n \in N$ velja $ana^{-1} \in N$.
+\end{definicija}
+
+\begin{trditev}
+    Za podgrupo $N$ grupe $G$ so naslednji pogoji ekvivalenti:
+    \begin{itemize}
+    \item[\rm (i)] $N$ je ednika.
+    \item[\rm (ii)] $aN \subseteq Na$ za vsak $a \in G$.
+    \item[\rm (iii)] $aN = Na$ za vsak $a \in G$.
+    \item[\rm (iv)] $aNa^{-1} = N$ za vsak $a \in G$. 
+    \end{itemize}
+\end{trditev}
+
 \begin{trditev}
     Naj bo $G$ grupa in $\Delta(G) = \{(g,g) \mid g \in G \} \subseteq G \times G$.
     Grupa $G$ je komutativna natanko takrat, ko je $\Delta(G)$ podgrupa edinka grupe $G$, $\Delta(G) \triangleleft G$.
@@ -57,16 +71,36 @@ V tej seminarski bomo obravnavali uporabe topoloških pristopov za študij lastn
                 (\alpha, \alpha) + (\alpha^{-1}, \alpha^{-1}) = (\alpha \cdot \alpha^{-1}, \alpha \cdot \alpha^{-1}) = (1,1).
             \end{gather*}
             Vidimo, da je $\Delta(G)$ zaprta za opreacijo, inverz $(\alpha, \alpha)$ pa je $(\alpha^{-1}, \alpha^{-1}) \in \Delta(G)$, torej zaprta tudi za invertiranje.
-        \item[($\Leftarrow$)] Naj bosta $\alpha, \beta$ elementa grupe $G$ z enoto $1$. Potem so $(\alpha,1), (\alpha^{-1}, 1), (\beta, \beta) \in G \times G$ in
+        \item[($\Leftarrow$)] Naj bosta $\alpha, \beta$ elementa grupe $G$ z enoto $1$.
+        Potem so $(\alpha,1), (\alpha^{-1}, 1), (\beta, \beta) \in G \times G$ in
             $(\alpha,1)^{-1} = (\alpha^{-1},1)$ ter $(\beta, \beta) \in \Delta(G)$. Potem lahko izračunamo:
             \[(\alpha,1) \cdot (\beta, \beta) \cdot (\alpha^{-1}, 1) = (\alpha\beta\alpha^{-1}, \beta).\]
             Ker je $\Delta(G)$ ednika je zaprta za invertiranje, torej je $\alpha\beta\alpha^{-1} = \beta \Rightarrow \alpha\beta = \beta\alpha$
     \end{itemize}
 \qed
 
+\begin{definicija}
+    Topološki prostor $X$ je Hausdorffov, če za vsaki različni točki $x_1, x_2 \in X$ obstajata odprti okoloici $U_1$ in $U_2$ za točki $x_1$ in $x_2$, da $U_1 \cap U_2 = \emptyset$.
+\end{definicija}
+
+\begin{trditev}
+    Naslednje izjave so ekvivalentne:
+    \begin{itemize}
+        \item[\rm (i)] Prostor $X$ je Hausdorffov.
+        \item[\rm (ii)] Za poljuben $x \in X$ je $\cap_{U \in \mathcal{U}} \overline{U}$, kjer je $\mathcal{U}$ družina vseh okolic $x$.
+        \item[\rm (iii)] Diagonala $\Delta(X) = \{(x,x) \mid x \in X \} $ je zaprt podprostor produkta $X \times X$
+    \end{itemize}
+\end{trditev}
 
 
+\section{Konjugiranostna topologija}
 
+\begin{definicija}
+    Naj bo $G$ grup in označimo $U_h = \{ghg^{-1} \mid g \in G \}$
+\end{definicija}
 
+\begin{izrek}
+    $G$ je Abelova natanko takrat, ko je $\mathcal{T}(G)$ Hausdorffova.
+\end{izrek}
 
 \end{document}
