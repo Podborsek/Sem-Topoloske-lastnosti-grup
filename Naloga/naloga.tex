@@ -67,15 +67,15 @@ V tej seminarski bomo obravnavali uporabe topoloških pristopov za študij lastn
         \item[($\Rightarrow$)] Ker je $G$ komutativna je seveda tudi $G \times G$ komutativna. Torej je vsaka njena podgrupa edinka.
             Zdaj je trebna le še pokazati, da je $\Delta(G) \le G \times G$, kar je enostavno. Naj bosta $a = (\alpha, \alpha), b = (\beta, \beta) \in \Delta(G)$, potem:
             \begin{gather*}
-                a + b = (\alpha, \alpha) + (\beta, \beta) = (\alpha + \beta, \alpha + \beta) \in \Delta(G), \\
-                (\alpha, \alpha) + (\alpha^{-1}, \alpha^{-1}) = (\alpha \cdot \alpha^{-1}, \alpha \cdot \alpha^{-1}) = (1,1).
+                a \cdot b = (\alpha, \alpha) \cdot (\beta, \beta) = (\alpha \cdot \beta, \alpha \cdot \beta) \in \Delta(G), \\
+                (\alpha, \alpha) \cdot (\alpha^{-1}, \alpha^{-1}) = (\alpha \cdot \alpha^{-1}, \alpha \cdot \alpha^{-1}) = (1,1).
             \end{gather*}
             Vidimo, da je $\Delta(G)$ zaprta za opreacijo, inverz $(\alpha, \alpha)$ pa je $(\alpha^{-1}, \alpha^{-1}) \in \Delta(G)$, torej zaprta tudi za invertiranje.
         \item[($\Leftarrow$)] Naj bosta $\alpha, \beta$ elementa grupe $G$ z enoto $1$.
         Potem so $(\alpha,1), (\alpha^{-1}, 1), (\beta, \beta) \in G \times G$ in
             $(\alpha,1)^{-1} = (\alpha^{-1},1)$ ter $(\beta, \beta) \in \Delta(G)$. Potem lahko izračunamo:
             \[(\alpha,1) \cdot (\beta, \beta) \cdot (\alpha^{-1}, 1) = (\alpha\beta\alpha^{-1}, \beta).\]
-            Ker je $\Delta(G)$ ednika je zaprta za invertiranje, torej je $\alpha\beta\alpha^{-1} = \beta \Rightarrow \alpha\beta = \beta\alpha$
+            Ker je $\Delta(G)$ ednika je zaprta za konjugiranje, torej je $\alpha\beta\alpha^{-1} = \beta \Rightarrow \alpha\beta = \beta\alpha$
     \end{itemize}
 \qed
 
@@ -93,14 +93,96 @@ V tej seminarski bomo obravnavali uporabe topoloških pristopov za študij lastn
 \end{trditev}
 
 
+
+
+
+
+
+
 \section{Konjugiranostna topologija}
+
+
+
+\subsection{Konjugiranostni razerdi}
+
+\begin{definicija}
+    Element $y$ grupe $G$ je konjugiran elementu $x$ iz $G$, če obstaja tak $g \in G$, da je $y = gxg^{-1}$.
+\end{definicija}
+
+\begin{trditev}
+    Konjugiranost je ekvivalenčna relacija.
+\end{trditev}
+
+\begin{pripomba}
+    Ekvivalenčnim razredom za konjugiranost pravimo konjugiranostni razredi.
+\end{pripomba}
+
+\noindent
+{\em Dokaz:\/}
+    Relacija je ekvivalenčna, če je refleksivna, simetrična in tranzitivna. Naj bo $e$ enota grupe $G$ in $x$ poljuben element $G$, potem $x = exe^{-1}$.
+    To pomeni, da je poljuben element $G$ konjugiran samemu sebi, relacija je refleksivna.
+    Naj bo $y$ konjugiran $x$, torej obstaja $g \in G$, da $y = gxg^{-1}$. Z enostavnim preoblikovanjem enačbe dobimo $x = g^{-1}yg$.
+    Torej je tudi $x$ konjugiran $y$, relacija je simetrična.
+\qed
+
+
+\begin{zgled}
+    \begin{itemize}
+        \item d8
+        \item kvaternioni
+        \item podobne matrike
+    \end{itemize}
+\end{zgled}
 
 \begin{definicija}
     Naj bo $G$ grup in označimo $U_h = \{ghg^{-1} \mid g \in G \}$
 \end{definicija}
 
+
+
+
+
+
+
+
+\subsection{Uporaba}
+
+
+
 \begin{izrek}
     $G$ je Abelova natanko takrat, ko je $\mathcal{T}(G)$ Hausdorffova.
 \end{izrek}
+
+\noindent
+{\em Dokaz:\/}
+    \begin{itemize}
+        \item[($\Rightarrow$)] $G$ je Abelova natanko takrat, ko $gh = hg $, ekvivalentno $ghg^{-1} = h$, za vse $g,h \in G$, kar pa ravno pomeni $U_h = \{ h\}$ za vsak $h \in G$.
+        To pomeni, da so v $\mathcal{T}(G)$ enojci odprti, torej je to diskretna topologija. Diskretna topologija je seveda Hausdorffova.
+        \item[($\Leftarrow$)] Privzemimo sedaj, da je $\mathcal{T}(G)$ Hausdorffov. Imejmo poljuben $x \in G$ in recimo, da obstaja $y \in U_x$ različen od $x$.
+        Ker je $G$ Hausdorffova obstajata odprti okoloici $U_h$ in $U_k$, da $x \in U_h, y \in U_k$ in $U_h \cap U_k = \emptyset$.
+        Toda to pomeni, da $x \in U_x \cap U_h$ in $y \in U_x \cap U_k$ torej $U_h = U_x = U_h$, kar pa je v protislovju z $U_h \cap U_k = \emptyset$.
+        To pomeni, da $U_x = \{x\}$, kar pa je ravno ekvivalentno komutativnosti $G$.
+    \end{itemize} 
+\qed
+
+
+\begin{izrek}
+    $H \triangleleft G$, če in samo če je $H$ zaprt v $\mathcal{T}(G)$.
+\end{izrek}
+
+\noindent
+{\em Dokaz:\/}
+    \begin{itemize}
+        \item[($\Rightarrow$)] $G$ je 
+        \item[($\Leftarrow$)] Priv
+    \end{itemize} 
+\qed
+
+\begin{izrek}
+    Če je $\phi: G \rightarrow \Gamma$ homomorfizem grup, potem je praslika $\phi^{-1}(U_\gamma)$ odprta v $\mathcal{T}(G)$ za vsak $\gamma \in \Gamma$.
+\end{izrek}
+
+
+
 
 \end{document}

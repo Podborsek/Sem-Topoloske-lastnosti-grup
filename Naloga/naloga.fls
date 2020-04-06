@@ -112,7 +112,12 @@ INPUT D:\Gašper\Programi\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
 INPUT D:\Gašper\Programi\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
 OUTPUT d:\Gašper\Faks\2. letnik\Sem-Topoloske-lastnosti-grup\Naloga\naloga.pdf
 INPUT C:\Users\Gasper\AppData\Local\MiKTeX\2.9\pdftex\config\pdftex.map
+INPUT D:\Gašper\Programi\MiKTeX\fonts\tfm\public\lm\ec-lmbx12.tfm
+INPUT D:\Gašper\Programi\MiKTeX\tex\latex\lm\ts1lmr.fd
+INPUT D:\Gašper\Programi\MiKTeX\tex\latex\lm\ts1lmr.fd
+INPUT D:\Gašper\Programi\MiKTeX\fonts\tfm\public\lm\ts1-lmr12.tfm
 INPUT d:\Gašper\Faks\2. letnik\Sem-Topoloske-lastnosti-grup\Naloga\naloga.aux
+INPUT D:\Gašper\Programi\MiKTeX\fonts\enc\dvips\lm\lm-ts1.enc
 INPUT D:\Gašper\Programi\MiKTeX\fonts\enc\dvips\lm\lm-mathit.enc
 INPUT D:\Gašper\Programi\MiKTeX\fonts\enc\dvips\lm\lm-rm.enc
 INPUT D:\Gašper\Programi\MiKTeX\fonts\enc\dvips\lm\lm-mathsy.enc

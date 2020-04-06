@@ -1,0 +1,85 @@
+\documentclass{beamer}
+
+\usepackage[slovene]{babel}
+\usepackage{amsfonts,amssymb}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+
+\usetheme{Warsaw}
+
+\def\N{\mathbb{N}} % mnozica naravnih stevil
+\def\Z{\mathbb{Z}} % mnozica celih stevil
+\def\Q{\mathbb{Q}} % mnozica racionalnih stevil
+\def\R{\mathbb{R}} % mnozica realnih stevil
+\def\C{\mathbb{C}} % mnozica kompleksnih stevil
+
+
+\def\qed{$\hfill\Box$}   % konec dokaza
+\newtheorem{izrek}{Izrek}
+\newtheorem{trditev}{Trditev}
+\newtheorem{posledica}{Posledica}
+\newtheorem{lema}{Lema}
+\newtheorem{definicija}{Definicija}
+\newtheorem{pripomba}{Pripomba}
+\newtheorem{primer}{Primer}
+\newtheorem{zgled}{Zgled}
+\newtheorem{zgledi}{Zgledi uporabe}
+\newtheorem{zglediaf}{Zgledi aritmetičnih funkcij}
+\newtheorem{oznaka}{Oznaka}
+
+\title{Topološke lastnosti grup}
+\author{Gašper Rotar}
+\institute{Fakulteta za matematiko in fiziko}
+
+
+
+
+\begin{document}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+
+\begin{oznaka}
+\[
+\N = \{1,2,3,\ldots\}
+\]
+%\vspace{0.1pt}
+\end{oznaka}
+
+\pause
+\medskip
+\begin{definicija}
+\alert{Aritmetična funkcija} je preslikava oblike
+\[
+f: \N \to A, \quad A \subseteq \C.
+\]
+\pause
+Aritmetična funkcija $f$ je \alert{multiplikativna}, če za poljubni tuji števili $a, b \in \N$ velja:
+\[
+f(ab) = f(a)f(b).
+\]
+%\vspace{0.1pt}
+\end{definicija}
+
+\end{frame}
+
+\begin{frame}
+    \begin{itemize}
+        \item refleksivnost: Naj bo $e$ enota $G$, potem $x = exe^{-1}$
+        \item simetričnost: $y = gxg^{-1} \Rightarrow x = g^{-1}yg$
+        \item tranzitivnost:
+    \end{itemize} 
+\end{frame}
+
+
+
+\end{document}
