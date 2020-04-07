@@ -13,7 +13,7 @@
 \def\Q{\mathbb{Q}} % mnozica racionalnih stevil
 \def\R{\mathbb{R}} % mnozica realnih stevil
 \def\C{\mathbb{C}} % mnozica kompleksnih stevil
-\newcommand{\geslo}[2]{\noindent\textbf{#1} \quad \hangindent=1cm #2\\[{-1}pc]}
+\newcommand{\geslo}[2]{\noindent\textbf{#1} {#2}}
 
 \def\qed{$\hfill\Box$}   % konec dokaza
 \def\qedm{\qquad\Box}   % konec dokaza v matematičnem načinu
@@ -42,7 +42,7 @@ V tej seminarski bomo obravnavali uporabe topoloških pristopov za študij lastn
 \section{Dva preprosta izreka}
 
 \begin{definicija}
-    Naj bo $N$ podgrupa grupe $G$. $N$ je podgrupa edinka grupe $G$, označimo $N \triangleleft G$, če za vse $a \in G$ in $n \in N$ velja $ana^{-1} \in N$.
+    Naj bo $N$ podgrupa grupe $G$. $N$ je podgrupa \emph{edinka} grupe $G$, označimo $N \triangleleft G$, če za vse $a \in G$ in $n \in N$ velja $ana^{-1} \in N$.
 \end{definicija}
 
 \begin{trditev}
@@ -65,7 +65,7 @@ V tej seminarski bomo obravnavali uporabe topoloških pristopov za študij lastn
 {\em Dokaz:\/}
     \begin{itemize}
         \item[($\Rightarrow$)] Ker je $G$ komutativna je seveda tudi $G \times G$ komutativna. Torej je vsaka njena podgrupa edinka.
-            Zdaj je trebna le še pokazati, da je $\Delta(G) \le G \times G$, kar je enostavno. Naj bosta $a = (\alpha, \alpha), b = (\beta, \beta) \in \Delta(G)$, potem:
+            Sedaj je trebna le še pokazati, da je $\Delta(G) \le G \times G$, kar je enostavno. Naj bosta $a = (\alpha, \alpha), b = (\beta, \beta) \in \Delta(G)$, potem:
             \begin{gather*}
                 a \cdot b = (\alpha, \alpha) \cdot (\beta, \beta) = (\alpha \cdot \beta, \alpha \cdot \beta) \in \Delta(G), \\
                 (\alpha, \alpha) \cdot (\alpha^{-1}, \alpha^{-1}) = (\alpha \cdot \alpha^{-1}, \alpha \cdot \alpha^{-1}) = (1,1).
@@ -80,14 +80,14 @@ V tej seminarski bomo obravnavali uporabe topoloških pristopov za študij lastn
 \qed
 
 \begin{definicija}
-    Topološki prostor $X$ je Hausdorffov, če za vsaki različni točki $x_1, x_2 \in X$ obstajata odprti okoloici $U_1$ in $U_2$ za točki $x_1$ in $x_2$, da $U_1 \cap U_2 = \emptyset$.
+    Topološki prostor $X$ je \emph{Hausdorffov}, če za vsaki različni točki $x_1, x_2 \in X$ obstajata odprti okoloici $U_1$ in $U_2$ za točki $x_1$ in $x_2$, da $U_1 \cap U_2 = \emptyset$.
 \end{definicija}
 
 \begin{trditev}
     Naslednje izjave so ekvivalentne:
     \begin{itemize}
         \item[\rm (i)] Prostor $X$ je Hausdorffov.
-        \item[\rm (ii)] Za poljuben $x \in X$ je $\cap_{U \in \mathcal{U}} \overline{U}$, kjer je $\mathcal{U}$ družina vseh okolic $x$.
+        \item[\rm (ii)] Za poljuben $x \in X$ je $\bigcap_{U \in \mathcal{U}} \overline{U}$, kjer je $\mathcal{U}$ družina vseh okolic $x$.
         \item[\rm (iii)] Diagonala $\Delta(X) = \{(x,x) \mid x \in X \} $ je zaprt podprostor produkta $X \times X$
     \end{itemize}
 \end{trditev}
@@ -106,16 +106,12 @@ V tej seminarski bomo obravnavali uporabe topoloških pristopov za študij lastn
 \subsection{Konjugiranostni razerdi}
 
 \begin{definicija}
-    Element $y$ grupe $G$ je konjugiran elementu $x$ iz $G$, če obstaja tak $g \in G$, da je $y = gxg^{-1}$.
+    Element $y$ grupe $G$ je \emph{konjugiran} elementu $x$ iz $G$, če obstaja tak $g \in G$, da je $y = gxg^{-1}$.
 \end{definicija}
 
 \begin{trditev}
     Konjugiranost je ekvivalenčna relacija.
 \end{trditev}
-
-\begin{pripomba}
-    Ekvivalenčnim razredom za konjugiranost pravimo konjugiranostni razredi.
-\end{pripomba}
 
 \noindent
 {\em Dokaz:\/}
@@ -123,23 +119,39 @@ V tej seminarski bomo obravnavali uporabe topoloških pristopov za študij lastn
     To pomeni, da je poljuben element $G$ konjugiran samemu sebi, relacija je refleksivna.
     Naj bo $y$ konjugiran $x$, torej obstaja $g \in G$, da $y = gxg^{-1}$. Z enostavnim preoblikovanjem enačbe dobimo $x = g^{-1}yg$.
     Torej je tudi $x$ konjugiran $y$, relacija je simetrična.
+    Končno pokažimo še tranzitivnost. Če je $y = gxg^{-1}$ in $z = hyh^{-1}$ potem vstavimo $y$ v drugo enačbo da dobimo $z = hgxg^{-1}h^{-1}$.
+    Opazimo, da je $(hg)^{-1} = g^{-1}h^{-1}$ torej je $z$ konjugiran $x$.
 \qed
 
+\begin{pripomba}
+    Ekvivalenčnim razredom za konjugiranost pravimo \emph{konjugiranostni razredi}.
+\end{pripomba}
 
 \begin{zgled}
     \begin{itemize}
-        \item d8
+        \item Če je $G$ komutativna potem za vsak $x,g \in G$ velja $gxg^{-1} = xgg^{-1} = x$, torej je vsak element sam v svojem konjugiranostnem razredu.
         \item kvaternioni
         \item podobne matrike
     \end{itemize}
 \end{zgled}
 
-\begin{definicija}
-    Naj bo $G$ grup in označimo $U_h = \{ghg^{-1} \mid g \in G \}$
-\end{definicija}
+
+\begin{izrek}
+    Naj bo $G$ grupa in označimo $U_h = \{ghg^{-1} \mid g \in G \}$, to je konjugiranostni razred elementa $h$.
+    Množica $\Theta = \bigcup_{h \in G}\{U_h\}$ je baza topologije na $G$.
+\end{izrek}
+
+\begin{pripomba}
+    To topologijo bomo imenovali \emph{konjugiranostna topologija} in jo označili z $\mathcal{T}(G)$.
+\end{pripomba}
 
 
+\noindent
+{\em Dokaz:\/}
+    Najprej moramo pokazati, da $\Theta$ pokritje cel $G$, kar je enostavno, preprosto vzamemo $\bigcup_{h \in G}U_h$.
+    Ta množica je unija odprtih in vsebuje vsak $g \in G$, saj je ta gotovo v $U_g$.
 
+\qed
 
 
 
@@ -156,7 +168,7 @@ V tej seminarski bomo obravnavali uporabe topoloških pristopov za študij lastn
 \noindent
 {\em Dokaz:\/}
     \begin{itemize}
-        \item[($\Rightarrow$)] $G$ je Abelova natanko takrat, ko $gh = hg $, ekvivalentno $ghg^{-1} = h$, za vse $g,h \in G$, kar pa ravno pomeni $U_h = \{ h\}$ za vsak $h \in G$.
+        \item[($\Rightarrow$)] $G$ je Abelova natanko takrat, ko $gh = hg $,za vsak $h,g \in G$, ekvivalentno $ghg^{-1} = h$, za vsak $g,h \in G$, kar pa ravno pomeni $U_h = \{ h\}$ za vsak $h \in G$.
         To pomeni, da so v $\mathcal{T}(G)$ enojci odprti, torej je to diskretna topologija. Diskretna topologija je seveda Hausdorffova.
         \item[($\Leftarrow$)] Privzemimo sedaj, da je $\mathcal{T}(G)$ Hausdorffov. Imejmo poljuben $x \in G$ in recimo, da obstaja $y \in U_x$ različen od $x$.
         Ker je $G$ Hausdorffova obstajata odprti okoloici $U_h$ in $U_k$, da $x \in U_h, y \in U_k$ in $U_h \cap U_k = \emptyset$.
@@ -173,8 +185,12 @@ V tej seminarski bomo obravnavali uporabe topoloških pristopov za študij lastn
 \noindent
 {\em Dokaz:\/}
     \begin{itemize}
-        \item[($\Rightarrow$)] $G$ je 
-        \item[($\Leftarrow$)] Priv
+        \item[($\Rightarrow$)] Naj bo $H \triangleleft G$. Dovolj je pokazati, da je $G - H$ odprta, saj iz tega sledi, da je $H$ zaprta.
+        Naj bo $x \in G - H$ in $U_x$ konjugiranostni razred $x$, po definiciji je to tudi odprta okolica $x$.
+        Recimo, da $U_x \cap H \neq \emptyset$, potem obstajata $g \in G$ in $h \in H$, da $h = gxg^{-1}$.
+        Iz tega sledi $x = g^{-1}hg$, ker pa je $H$ edinka po definiciji sledi $x \in H$. Prispeli smo do protislovja, torej $U_x \cap H = \emptyset$.
+        Tako smo našli odprto okolico za $x$, ki je vsa v množica $G - H$, torej je ta odprta.
+        \item[($\Leftarrow$)] Še pride
     \end{itemize} 
 \qed
 
@@ -182,6 +198,25 @@ V tej seminarski bomo obravnavali uporabe topoloških pristopov za študij lastn
     Če je $\phi: G \rightarrow \Gamma$ homomorfizem grup, potem je praslika $\phi^{-1}(U_\gamma)$ odprta v $\mathcal{T}(G)$ za vsak $\gamma \in \Gamma$.
 \end{izrek}
 
+\noindent
+{\em Dokaz:\/}
+    Še pride
+\qed
+
+\section{Pogeld v druge algebraične strukture}
+
+Zaenkrat nič.
+
+
+\section*{Angleško-slovenski slovar strokovnih izrazov}
+
+\geslo{normal subgroup}{podgrupa edinka}
+
+\begin{thebibliography}{1}
+    \bibitem{Bre}
+    M.~Brešar, \emph{Uvod v algebro}, DMFA -- založništvo, Ljubljana, 2018.
+\end{thebibliography}
+    
 
 
 
