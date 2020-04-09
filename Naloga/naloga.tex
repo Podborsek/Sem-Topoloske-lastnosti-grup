@@ -35,28 +35,26 @@ Fakulteta za matematiko in fiziko}
 
 \section{Uvod}
 
-V tej seminarski bomo obravnavali uporabe topoloških pristopov za študij lastnosti grup.
+V tej seminarski nalogi bomo obravnavali uporabe topoloških pristopov za študij lastnosti grup.
+To bomo storili tako, da bomo prek konjugiranja na naraven način na vsaki grupi definirali topologijo.
 
 
 
-\section{Dva preprosta izreka}
+\section{Dve preprosti trditvi}
+
+Za motivacijo si najprej poglejmo dve preprosti trditvi, eno iz teorije grup, drugo iz splošne topologije.
+Podobnost med tema dvema trditvama nam bo dala idejo za topologijo, ki jo bomo definirali v naslednjem poglavju.
+Spomnimo se zdaj definicije podgrupe edinke, ki jo bomo uporabili pri dokazu prve trditve.
 
 \begin{definicija}
     Naj bo $N$ podgrupa grupe $G$. $N$ je podgrupa \emph{edinka} grupe $G$, označimo $N \triangleleft G$, če za vse $a \in G$ in $n \in N$ velja $ana^{-1} \in N$.
 \end{definicija}
 
-\begin{trditev}
-    Za podgrupo $N$ grupe $G$ so naslednji pogoji ekvivalenti:
-    \begin{itemize}
-    \item[\rm (i)] $N$ je ednika.
-    \item[\rm (ii)] $aN \subseteq Na$ za vsak $a \in G$.
-    \item[\rm (iii)] $aN = Na$ za vsak $a \in G$.
-    \item[\rm (iv)] $aNa^{-1} = N$ za vsak $a \in G$. 
-    \end{itemize}
-\end{trditev}
+
+Prva trditev, ki si jo bomo ogledali je karakterizacija komutativnosti s podgrupo edinko. Pri tem si bomo pomagali z diagonalo $G$.
 
 \begin{trditev}
-    Naj bo $G$ grupa in $\Delta(G) = \{(g,g) \mid g \in G \} \subseteq G \times G$.
+    Naj bo $G$ grupa in $\Delta(G) = \{(g,g) \mid g \in G \} \subseteq G \times G$ njena diagonala.
     Grupa $G$ je komutativna natanko takrat, ko je $\Delta(G)$ podgrupa edinka grupe $G$, $\Delta(G) \triangleleft G$.
 \end{trditev}
 
@@ -70,30 +68,51 @@ V tej seminarski bomo obravnavali uporabe topoloških pristopov za študij lastn
                 a \cdot b = (\alpha, \alpha) \cdot (\beta, \beta) = (\alpha \cdot \beta, \alpha \cdot \beta) \in \Delta(G), \\
                 (\alpha, \alpha) \cdot (\alpha^{-1}, \alpha^{-1}) = (\alpha \cdot \alpha^{-1}, \alpha \cdot \alpha^{-1}) = (1,1).
             \end{gather*}
-            Vidimo, da je $\Delta(G)$ zaprta za opreacijo, inverz $(\alpha, \alpha)$ pa je $(\alpha^{-1}, \alpha^{-1}) \in \Delta(G)$, torej zaprta tudi za invertiranje.
+            Vidimo, da je $\Delta(G)$ zaprta za množenje. Dalje velja, da je inverz $(\alpha, \alpha)$ ravno $(\alpha^{-1}, \alpha^{-1}) \in \Delta(G)$, torej zaprta tudi za invertiranje.
         \item[($\Leftarrow$)] Naj bosta $\alpha, \beta$ elementa grupe $G$ z enoto $1$.
-        Potem so $(\alpha,1), (\alpha^{-1}, 1), (\beta, \beta) \in G \times G$ in
+        Potem so $(\alpha,1), (\alpha^{-1}, 1), (\beta, \beta) \in G \times G$ kjer
             $(\alpha,1)^{-1} = (\alpha^{-1},1)$ ter $(\beta, \beta) \in \Delta(G)$. Potem lahko izračunamo:
             \[(\alpha,1) \cdot (\beta, \beta) \cdot (\alpha^{-1}, 1) = (\alpha\beta\alpha^{-1}, \beta).\]
-            Ker je $\Delta(G)$ ednika je zaprta za konjugiranje, torej je $\alpha\beta\alpha^{-1} = \beta \Rightarrow \alpha\beta = \beta\alpha$
+            Ker je $\Delta(G)$ edinka je zaprta za konjugiranje, kar pomeni $(\alpha\beta\alpha^{-1}, \beta) \in \Delta$,
+            torej je $\alpha\beta\alpha^{-1} = \beta$ oziroma $\alpha\beta = \beta\alpha$. Ker to velja za poljubna $\alpha, \beta$ je $G$ komutativna.
     \end{itemize}
 \qed
 
+Sedaj, ko smo dokazali prvo trditev, si poglejmo še drugo. Najprej bomo definirali Hausdorffovo lastnost, potem pa jo bomo, kot zgoraj komutativnost, karakterizirali s pomočjo diagonale. 
+
 \begin{definicija}
-    Topološki prostor $X$ je \emph{Hausdorffov}, če za vsaki različni točki $x_1, x_2 \in X$ obstajata odprti okoloici $U_1$ in $U_2$ za točki $x_1$ in $x_2$, da $U_1 \cap U_2 = \emptyset$.
+    Topološki prostor $X$ je \emph{Hausdorffov}, če za vsaki različni točki $x_1, x_2 \in X$ obstajata odprti okolici $U_1$ in $U_2$ za točki $x_1$ in $x_2$, da $U_1 \cap U_2 = \emptyset$.
 \end{definicija}
+
+Sledeča trditev poveže Hausdorffovo lastnost z diagonalo prostora.
+V naslednji trditvi sta glavni prva in tretja točka, druga je tam predvsem za lažje dokazovaje.
 
 \begin{trditev}
     Naslednje izjave so ekvivalentne:
     \begin{itemize}
         \item[\rm (i)] Prostor $X$ je Hausdorffov.
-        \item[\rm (ii)] Za poljuben $x \in X$ je $\bigcap_{U \in \mathcal{U}} \overline{U}$, kjer je $\mathcal{U}$ družina vseh okolic $x$.
+        \item[\rm (ii)] Za poljuben $x \in X$ je $\bigcap_{U \in \mathcal{U}} \overline{U} = \{x\}$, kjer je $\mathcal{U}$ družina vseh okolic $x$.
         \item[\rm (iii)] Diagonala $\Delta(X) = \{(x,x) \mid x \in X \} $ je zaprt podprostor produkta $X \times X$
     \end{itemize}
 \end{trditev}
 
+\noindent
+{\em Dokaz:\/}
+    Privzemimo, da je prostor Hausdorffov in vzemimo $y \neq x$. Tedaj obstajata okolici $U$ za $x$ in $V$ za $y$, ki sta disjunktni. Torej $y \notin \overline{U}$.
+    Tako tudi ni v preseku zaprtij vseh okolic točke $x$. Torej je $\bigcap_{U \in \mathcal{U}} \overline{U} = \{x\}$.
+    Sedaj pokažimo, da je $\Delta^C$ odprta v $X \times X$, kar je ekvivalentno temu, da je $\Delta$ zaprta.
+    Naj bo $(x,y) \in \Delta^C$. Vemo, da obstaja $U$, ki je odprta okolica $x$, katere zaprtje ne vsebuje $y$.
+    Potem je $U \times \overline{U}^C$ odprta okolica $(x,y)$, ki ne seka diagonale.
+    Privzemino zdaj da je diagonala zaprta. Če sta točki $x$ in $y$ različni, potem za $(x,y)$ obstaja škatlasta odprta okolica $U \times V$, ki ne seka diagonale.
+    To pomeni, da sta $U$ in $V$ odprti in disjunktni, kar pa je ravno zahteva za Hausdorffovo lastnost. \qed
 
 
+
+Zdaj, ko smo dokazali obe trditvi, lahko opazimo zanimive paralele med komutativnostjo in Hausdorffovo lastnostjo. Obe lastnosti sta dokaj osnovni,
+če namreč pomislimo na najbolj preproste zglede grup nam verjetno na pamet padej najprej $\Z, \Q, \R$, ki so vse komutativne.
+Ravno tako se topološke prostore včasih motivira kot posplošitev metričnih prostorov, ki so seveda Hausdorffovi.
+Obe se da karakterizirati z diagonalo.
+Vprašamo se, ali se da ti dve lastnosti kako konkretno povezati. Odgovor je da, kakor bomo videli v naslednjem poglavju.
 
 
 
@@ -101,9 +120,15 @@ V tej seminarski bomo obravnavali uporabe topoloških pristopov za študij lastn
 
 \section{Konjugiranostna topologija}
 
+Do povezave med komutativnostjo in Hausdorffovo lastnostjo bomo prišli prek konjugiranosti.
+V prvem podrazdelku bomo obnovili definicijo konjugiranosti in nekatere njene lastnosti. Potem bomo na naraven način definirali topologijo na grup.
+V drugem podrazdelku pa bomo videli kako postanejo preko prej definirane topologije mnogi topološki in algebraični pojmi ekvivalenti.
 
 
-\subsection{Konjugiranostni razerdi}
+
+\subsection{Konjugiranostni razredi}
+
+Konjugiranost je temeljna relacija na grupi. Elementi, ki so si konjugirani so si močno podobni in se, kar se tiče strukture grupe, skoraj enako obnašajo.
 
 \begin{definicija}
     Element $y$ grupe $G$ je \emph{konjugiran} elementu $x$ iz $G$, če obstaja tak $g \in G$, da je $y = gxg^{-1}$.
@@ -120,21 +145,33 @@ V tej seminarski bomo obravnavali uporabe topoloških pristopov za študij lastn
     Naj bo $y$ konjugiran $x$, torej obstaja $g \in G$, da $y = gxg^{-1}$. Z enostavnim preoblikovanjem enačbe dobimo $x = g^{-1}yg$.
     Torej je tudi $x$ konjugiran $y$, relacija je simetrična.
     Končno pokažimo še tranzitivnost. Če je $y = gxg^{-1}$ in $z = hyh^{-1}$ potem vstavimo $y$ v drugo enačbo da dobimo $z = hgxg^{-1}h^{-1}$.
-    Opazimo, da je $(hg)^{-1} = g^{-1}h^{-1}$ torej je $z$ konjugiran $x$.
+    Opazimo, da je $(hg)^{-1} = g^{-1}h^{-1}$, torej je $z$ konjugiran $x$.
 \qed
 
 \begin{pripomba}
     Ekvivalenčnim razredom za konjugiranost pravimo \emph{konjugiranostni razredi}.
 \end{pripomba}
 
+Za lažjo predstavo si poglejmo nekaj zgledov:
+
 \begin{zgled}
-    \begin{itemize}
-        \item Če je $G$ komutativna potem za vsak $x,g \in G$ velja $gxg^{-1} = xgg^{-1} = x$, torej je vsak element sam v svojem konjugiranostnem razredu.
-        \item kvaternioni
-        \item podobne matrike
-    \end{itemize}
+        Če je $G$ komutativna potem za vsak $x,g \in G$ velja $gxg^{-1} = xgg^{-1} = x$, torej je vsak element sam v svojem konjugiranostnem razredu.
+        Še več, če je vsak element v svojem razredu potem za vsak $g,h \in G$ velja $h = ghg^{-1}$, ekvivalentno $hg = gh$.
+        Torej je grupa komutativna natanko takrat, ko je vsak element v svojem konjugiranostnem razredu.
 \end{zgled}
 
+\begin{zgled}
+    Kvaternionska grupa $Q = \{\pm 1, \pm i, \pm j, \pm k\}$ ni komutativna. Z enostavnim a zamudnim računanjem pokažemo,
+    da so njeni konjugiranostni razredi $\{1\}, \{-1\}, \{\pm i\}, \{\pm j\}, \{\pm k\}$. 
+\end{zgled}
+
+\begin{zgled}
+    Pravimo, da sta si dve matriki $A$ in $B$ podobni, če obstaja taka obrnljiva matrika $P$, da je $B = P^{-1}AP$.
+    Torej je v $GL_n(\R)$ podobnost ravno konjugiranost. Kot vemo iz linearne algebre predstavljajo podobne matrike isto linearno preslikavo,
+    vendar glede na različne baze.
+\end{zgled}
+
+Opremljeni z razumevanjem konjugiranostnih razredov bomo lahko dokazali prvi pomemben izrek, na katerem bodo temeljili vsi nadaljni.
 
 \begin{izrek}
     Naj bo $G$ grupa in označimo $U_h = \{ghg^{-1} \mid g \in G \}$, to je konjugiranostni razred elementa $h$.
@@ -142,7 +179,7 @@ V tej seminarski bomo obravnavali uporabe topoloških pristopov za študij lastn
 \end{izrek}
 
 \begin{pripomba}
-    To topologijo bomo imenovali \emph{konjugiranostna topologija} in jo označili z $\mathcal{T}(G)$.
+    Topologijo, ki jo kot baza podaja $\Theta$ bomo imenovali \emph{konjugiranostna topologija} in jo označili z $\mathcal{T}(G)$.
 \end{pripomba}
 
 
@@ -150,16 +187,21 @@ V tej seminarski bomo obravnavali uporabe topoloških pristopov za študij lastn
 {\em Dokaz:\/}
     Najprej moramo pokazati, da $\Theta$ pokritje cel $G$, kar je enostavno, preprosto vzamemo $\bigcup_{h \in G}U_h$.
     Ta množica je unija odprtih in vsebuje vsak $g \in G$, saj je ta gotovo v $U_g$.
-
+    Naj bosta zdaj  $U_h$ in $U_k$ bazni množici. Pokazati moramo, da za vsak $x \in U_h \cap U_k$ obstaja bazna okolica $x$, ki je pod $U_h \cap U_k$.
+    Toda, če se konjugiranostna razreda sekata v eni točki potem sta enaka in tudi konjugiranostni razred te toče je enak, torej je $U_x = U_h = U_k$.
+    Torej je $x \in U_x \subseteq U_h \cap U_k$. Pokazali smo, da je $\Theta$ res baza neke topologije.
 \qed
 
+Tako smo na naraven način na vsaki grupi definirali topologijo.
+Kakšna ta topologija je in kako je povezana z lastnostmi grupe $G$ bomo videli v naslednjem razdelku.
+Dokazali bomo tesno povezavo med lastnostmi grupe $G$ in topologije $\mathcal{T}(G)$.
 
 
 
 
-\subsection{Uporaba}
+\subsection{Uporaba topologije $\mathcal{T}(G)$}
 
-
+Najprej lahko pokažemo, da sta si trditvi iz prvega razdelka tako podobni zato, ker sta komutativnost in Hausdorffov lastnost za $\mathcal{T}(G)$ tako rekoč enakovredni.
 
 \begin{izrek}
     $G$ je Abelova natanko takrat, ko je $\mathcal{T}(G)$ Hausdorffova.
@@ -168,15 +210,17 @@ V tej seminarski bomo obravnavali uporabe topoloških pristopov za študij lastn
 \noindent
 {\em Dokaz:\/}
     \begin{itemize}
-        \item[($\Rightarrow$)] $G$ je Abelova natanko takrat, ko $gh = hg $,za vsak $h,g \in G$, ekvivalentno $ghg^{-1} = h$, za vsak $g,h \in G$, kar pa ravno pomeni $U_h = \{ h\}$ za vsak $h \in G$.
+        \item[($\Rightarrow$)] $G$ je Abelova natanko takrat, ko $gh = hg $, za vsak $h,g \in G$, ekvivalentno $ghg^{-1} = h$, za vsak $g,h \in G$, kar pa ravno pomeni $U_h = \{ h\}$ za vsak $h \in G$.
         To pomeni, da so v $\mathcal{T}(G)$ enojci odprti, torej je to diskretna topologija. Diskretna topologija je seveda Hausdorffova.
         \item[($\Leftarrow$)] Privzemimo sedaj, da je $\mathcal{T}(G)$ Hausdorffov. Imejmo poljuben $x \in G$ in recimo, da obstaja $y \in U_x$ različen od $x$.
-        Ker je $G$ Hausdorffova obstajata odprti okoloici $U_h$ in $U_k$, da $x \in U_h, y \in U_k$ in $U_h \cap U_k = \emptyset$.
+        Ker je $G$ Hausdorffova obstajata odprti okolici $U_h$ in $U_k$, da $x \in U_h, y \in U_k$ in $U_h \cap U_k = \emptyset$.
         Toda to pomeni, da $x \in U_x \cap U_h$ in $y \in U_x \cap U_k$ torej $U_h = U_x = U_h$, kar pa je v protislovju z $U_h \cap U_k = \emptyset$.
         To pomeni, da $U_x = \{x\}$, kar pa je ravno ekvivalentno komutativnosti $G$.
     \end{itemize} 
 \qed
 
+Trditvi, ki smo ju uporabili za motivacijo sta komutativnost ter Hausdorffovo lastnost karakterizirali prek diagonale.
+V enem primeru je morala biti edinka, v drugem pa zaprta. Naslednji izrek pove, da sta tudi te dve lastnosti v $\mathcal{T}(G)$ enakovredni.
 
 \begin{izrek}
     $H \triangleleft G$, če in samo če je $H$ zaprt v $\mathcal{T}(G)$.
@@ -189,10 +233,16 @@ V tej seminarski bomo obravnavali uporabe topoloških pristopov za študij lastn
         Naj bo $x \in G - H$ in $U_x$ konjugiranostni razred $x$, po definiciji je to tudi odprta okolica $x$.
         Recimo, da $U_x \cap H \neq \emptyset$, potem obstajata $g \in G$ in $h \in H$, da $h = gxg^{-1}$.
         Iz tega sledi $x = g^{-1}hg$, ker pa je $H$ edinka po definiciji sledi $x \in H$. Prispeli smo do protislovja, torej $U_x \cap H = \emptyset$.
-        Tako smo našli odprto okolico za $x$, ki je vsa v množica $G - H$, torej je ta odprta.
-        \item[($\Leftarrow$)] Še pride
+        Tako smo našli odprto okolico za $x$, ki je vsa v množici $G - H$, torej je ta odprta.
+        \item[($\Leftarrow$)] Naj bo $H \subseteq G$ zaprta, oziroma $G - H$ odprta. Pokazali bomo, da je za vsak $h \in H$ tudi
+        $U_h \subseteq H$, to pomeni, da za vsak $g \in G$ velja $ghg^{-1} \in H$, kar je ravno definicija edinke. Recimo, da bi obstajal tak $h \in H$,
+        da $U_h \nsubseteq H$. To je mogoče le, če obstaja $x$, ji je v $U_h$ in hkrati ni v $H$. Toda iz $x \in U_h$ sledi $U_x = U_h$, torej $U_x$ seka tako $H$ kot $G - H$.
+        Očitno je, da vsaka odprta okolica $x$ vsebuje celoten $U_x$, kar pomeni, da vsaka okolica točke $x$ seka tako $H$ kot $G - H$. Drugače povedano, $x$ je mejna točka množice $H$.
+        Ker je $H$ zaprta, mora vsebovati vse svoje mejne točke, torej tak $x$ ne obstaja.
     \end{itemize} 
 \qed
+
+Pokažimo še, da je vsak homomorfizem grup glede na konjugiranostno topologijo zvezna preslikava.
 
 \begin{izrek}
     Če je $\phi: G \rightarrow \Gamma$ homomorfizem grup, potem je praslika $\phi^{-1}(U_\gamma)$ odprta v $\mathcal{T}(G)$ za vsak $\gamma \in \Gamma$.
@@ -200,21 +250,50 @@ V tej seminarski bomo obravnavali uporabe topoloških pristopov za študij lastn
 
 \noindent
 {\em Dokaz:\/}
-    Še pride
+    Zveznost je dovolj preverjati na bazi, torej je treba pokazati, da je za vsak $\gamma \in \Gamma$ praslika $\phi^{-1}(U_\gamma)$ odprta v $G$.
+    V ta namen definiramo
+    \[ S_\gamma = \bigcup_{\{g | \phi(g) \in U_\gamma\}} U_g .\]
+    $S_\gamma$ je unija odprtih množic torej je odprta. Z obojestransko inkluzijo pokažimo, da je $S_\gamma = \phi^{-1}(U_\gamma)$.
+    Če je $t \in \phi^{-1}(U_\gamma)$, potem je $\phi(t) \in U_\gamma$, torej je $t \in U_t \subseteq S_\gamma$. Ker to velja za vsak $t$ je $\phi^{-1}(U_\gamma) \subseteq S_\gamma$.
+    Naj bo zdaj $t \in S_\gamma$. Potem obstajata taka $g,h \in G$, da je $\phi(g) \in U_\gamma$ in $t = hgh^{-1}$. Zdaj lahko uporabimo $\phi$ na $t$, da dobimo
+    \[\phi(t) = \phi(h)\phi(g)\phi(h^{-1}) = \phi(h)\phi(g)\phi(h)^{-1} ,\] kjer smo pri drugem enačaju upoštevali, da je $\phi$ homomorfizem.
+    Torej je $\phi(t)$ konjugiran z $\phi(g)$, kar pomeni, da sta v enakem konjugiranostnem razredu. Ker pa je $\phi(g) \in U_\gamma$, je potem tudi $\phi(t) \in U_\gamma$,
+    kar pomeni $\phi(t) \in U_\gamma$, dalje $t \in \phi^{-1}(U_\gamma)$. Tako imamo še drugo inkluzijo, ker to velja za vsak $t \in S_\gamma$.
+
 \qed
 
-\section{Pogeld v druge algebraične strukture}
+Enostavno lahko premislimo, da implikacija v drugo smer ne velja. Vsaka konstantna preslikava je namreč zvezna. Če ne slika ravno v enoto, potem se seveda enota ne preslika v enoto,
+torej ne more biti homomorfizem.
 
-Zaenkrat nič.
+\section{Pogled v druge algebraične strukture}
+
+Vprašamo se, ali lahko kaj podobnega definiramo tudi v kolobarjih? Analog podgrupe edinke v kolobarju je ideal, to je taka podgrupa za seštevanje $I$ v kolobarju $K$,
+da za vsak $i \in I$ in $k \in K$ velja $ik \in I$ in $ki \in I$. Hitro pa ugotovimo, da za ideale ne velja podobna trditev o diagonali kot za grupe. Če bi bila namreč diagonala
+ideal bi za poljubne $a,b,d \in K$ veljalo $(a,b)(d,d) \in \Delta(K)$, kar bi pomenilo $ad = bd$ oziroma $(a-b)d = 0$. To bi torej veljalo tudi pri $a = 1$ in $b = 0$,
+kar bi pomenilo, da je $d$ vedno $0$. To pa je z izjemo trivialnega kolobarja nemogoče.
+Na kolobarjih torej preprosta definicija kakšne podobne topologije ni mogoča. Ali morda vseeno obstaja kakšna bolj zapletena posplošitev pa je izven obsega te naloge.
 
 
 \section*{Angleško-slovenski slovar strokovnih izrazov}
 
+\geslo{conjugate}{konjugiran}
+
+\geslo{conjugacy class}{konjugiranostni razred}
+
+\geslo{ideal}{ideal}
+
 \geslo{normal subgroup}{podgrupa edinka}
+
+\geslo{ring}{kolobar}
+
 
 \begin{thebibliography}{1}
     \bibitem{Bre}
     M.~Brešar, \emph{Uvod v algebro}, DMFA -- založništvo, Ljubljana, 2018.
+    \bibitem{Pav}
+    P.~Pavešič, \emph{Splošna topologija}, DMFA -- založništvo, Ljubljana, 2017.
+    \bibitem{Kohl}
+    T. Kohl, When Abelian = Hausdorff, \emph{The College Mathematics Journal}, 43, 3, 213-215
 \end{thebibliography}
     
 

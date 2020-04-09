@@ -27,6 +27,7 @@
 \newtheorem{zgledi}{Zgledi uporabe}
 \newtheorem{zglediaf}{Zgledi aritmetičnih funkcij}
 \newtheorem{oznaka}{Oznaka}
+\newtheorem{dokaz}{Dokaz}
 
 \title{Topološke lastnosti grup}
 \author{Gašper Rotar}
@@ -47,38 +48,143 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}
+\frametitle{Dve preprosti trditvi}
 
-\begin{oznaka}
-\[
-\N = \{1,2,3,\ldots\}
-\]
-%\vspace{0.1pt}
-\end{oznaka}
-
-\pause
-\medskip
 \begin{definicija}
-\alert{Aritmetična funkcija} je preslikava oblike
-\[
-f: \N \to A, \quad A \subseteq \C.
-\]
-\pause
-Aritmetična funkcija $f$ je \alert{multiplikativna}, če za poljubni tuji števili $a, b \in \N$ velja:
-\[
-f(ab) = f(a)f(b).
-\]
-%\vspace{0.1pt}
+    Naj bo $N$ podgrupa grupe $G$. $N$ je podgrupa \emph{edinka} grupe $G$, označimo $N \triangleleft G$, če za vse $a \in G$ in $n \in N$ velja $ana^{-1} \in N$.
 \end{definicija}
+
+\pause
+
+\begin{trditev}
+    Naj bo $G$ grupa in $\Delta(G) = \{(g,g) \mid g \in G \} \subseteq G \times G$ njena diagonala.
+    Grupa $G$ je komutativna natanko takrat, ko je $\Delta(G)$ podgrupa edinka grupe $G$, $\Delta(G) \triangleleft G$.
+\end{trditev}
 
 \end{frame}
 
 \begin{frame}
+\frametitle{Dve preprosti trditvi}
+
+\begin{dokaz}
     \begin{itemize}
-        \item refleksivnost: Naj bo $e$ enota $G$, potem $x = exe^{-1}$
-        \item simetričnost: $y = gxg^{-1} \Rightarrow x = g^{-1}yg$
-        \item tranzitivnost:
-    \end{itemize} 
+        \item[($\Rightarrow$)]
+            Ker je $G$ komutativna je seveda tudi $G \times G$ komutativna.
+            \pause
+            $a \cdot b = (\alpha, \alpha) \cdot (\beta, \beta) = (\alpha \cdot \beta, \alpha \cdot \beta) \in \Delta(G)$
+            \pause
+            $(\alpha, \alpha) \cdot (\alpha^{-1}, \alpha^{-1}) = (\alpha \cdot \alpha^{-1}, \alpha \cdot \alpha^{-1}) = (1,1)$
+            \pause
+            \bigskip
+        \item[($\Leftarrow$)]
+            Naj bodo $(\alpha,1), (\alpha^{-1}, 1), (\beta, \beta) \in G \times G$
+            \newline
+            \pause
+            Potem: $(\alpha,1) \cdot (\beta, \beta) \cdot (\alpha^{-1}, 1) = (\alpha\beta\alpha^{-1}, \beta).$
+            \newline
+            \pause
+            Velja: $(\alpha\beta\alpha^{-1}, \beta) \in \Delta$
+            \newline
+            \pause
+            Torej:$\alpha\beta\alpha^{-1} = \beta \Rightarrow \alpha\beta = \beta\alpha$
+    \end{itemize}
+\end{dokaz}
+
 \end{frame}
+
+\begin{frame}
+\frametitle{Dve preprosti trditvi}
+
+\begin{definicija}
+    Topološki prostor $X$ je \emph{Hausdorffov}, če za vsaki različni točki $x_1, x_2 \in X$ obstajata odprti okolici $U_1$ in $U_2$ za točki $x_1$ in $x_2$, da $U_1 \cap U_2 = \emptyset$.
+\end{definicija}
+\pause
+
+\begin{trditev}
+    Naslednje izjave so ekvivalentne:
+    \pause
+    \begin{itemize}
+        \item[\rm (i)] Prostor $X$ je Hausdorffov.
+        \pause 
+        \item[\rm (ii)] Za poljuben $x \in X$ je $\bigcap_{U \in \mathcal{U}} \overline{U} = \{x\}$, kjer je $\mathcal{U}$ družina vseh okolic $x$.
+        \pause 
+        \item[\rm (iii)] Diagonala $\Delta(X) = \{(x,x) \mid x \in X \} $ je zaprt podprostor produkta $X \times X$
+    \end{itemize}
+\end{trditev}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Dve preprosti trditvi}
+
+\begin{dokaz}
+    Tu pride dokaz haudorf
+\end{dokaz}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Konjugiranostni razredi}
+
+\begin{definicija}
+    Element $y$ grupe $G$ je \emph{konjugiran} elementu $x$ iz $G$, če obstaja tak $g \in G$, da je $y = gxg^{-1}$.
+\end{definicija}
+\bigskip
+\pause
+
+\begin{trditev}
+    Konjugiranost je ekvivalenčna relacija.
+\end{trditev}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Konjugiranostni razredi}
+
+\begin{dokaz}
+    tu pride dokaz Konjugiranostni
+\end{dokaz}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Konjugiranostni razredi}
+
+\begin{zgled}
+    Če je $G$ komutativna potem za vsak $x,g \in G$ velja:
+    \newline
+    \[gxg^{-1} = xgg^{-1} = x\]
+    \pause
+\end{zgled}
+
+\begin{zgled}
+    Kvaternionska grupa $Q = \{\pm 1, \pm i, \pm j, \pm k\}$ ni komutativna
+    \newline
+    \pause
+    Konjugiranostni razredi so $\{1\}, \{-1\}, \{\pm i\}, \{\pm j\}, \{\pm k\}$
+    \pause
+\end{zgled}
+
+\begin{zgled}
+    Podobne matrike: $B = P^{-1}AP$
+\end{zgled}
+
+
+\end{frame}
+
+
+
+
+
+
+
+
+
+
 
 
 
