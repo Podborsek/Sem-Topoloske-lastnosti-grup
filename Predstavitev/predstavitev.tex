@@ -118,7 +118,32 @@
 \frametitle{Dve preprosti trditvi}
 
 \begin{dokaz}
-    Tu pride dokaz haudorf
+    (i) $\Rightarrow$ (ii) Naj $X$ Hausdorffov in $y \neq x$.
+    \newline
+    \pause
+    $x \in U, y \in V, U \cap V = \emptyset$
+    \newline
+    \pause
+    Torej $y \notin \overline{U}$
+    \bigskip
+    \newline
+    \pause
+    (ii) $\Rightarrow$ (iii) Pokažimo, da $\Delta^C$ odprta v $X \times X$
+    \newline
+    \pause
+    $(x,y) \in \Delta^C$ obstaja $U$, da $x \in U$ in $y \notin \overline{U}$
+    \bigskip
+    \newline
+    \pause
+    (iii) $\Rightarrow$ (i) Naj bo $\Delta^C$ odprta
+    \newline
+    \pause
+    Za $x \neq y$ je $(x,y) \in \Delta^C$
+    \newline
+    \pause
+    $(x,y) \in $ $U \times V$
+    \pause
+    \qed
 \end{dokaz}
 
 \end{frame}
@@ -146,7 +171,13 @@
 \frametitle{Konjugiranostni razredi}
 
 \begin{dokaz}
-    tu pride dokaz Konjugiranostni
+    \begin{itemize}
+        \item<1->Refleksivnost: $x = exe$
+        \bigskip
+        \item<2->Simetričnost:  $y = gxg^{-1} \Rightarrow x = g^{-1}yg$
+        \bigskip
+        \item<3->Tranzitivnost: $y = gxg^{-1}, z = hyh^{-1} \Rightarrow z = hgxg^{-1}h^{-1}$
+    \end{itemize}
 \end{dokaz}
 
 \end{frame}
@@ -155,9 +186,12 @@
 \frametitle{Konjugiranostni razredi}
 
 \begin{zgled}
-    Če je $G$ komutativna potem za vsak $x,g \in G$ velja:
-    \newline
-    \[gxg^{-1} = xgg^{-1} = x\]
+    Če je $G$ komutativna potem je vsak element v svojem razredu.
+    \medskip
+    \pause
+    \[ghg^{-1} = gg^{-1} = g\]
+    \pause
+    \[ghg^{-1} = h \Rightarrow gh = hg\]
     \pause
 \end{zgled}
 
@@ -173,19 +207,192 @@
     Podobne matrike: $B = P^{-1}AP$
 \end{zgled}
 
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Konjugiranostni razredi}
+
+\begin{izrek}
+    Naj bo $G$ grupa in označimo $U_h = \{ghg^{-1} \mid g \in G \}$, to je konjugiranostni razred elementa $h$.
+    \pause
+    Množica $\Theta = \bigcup_{h \in G}\{U_h\}$ je baza topologije na $G$.
+    \pause
+\end{izrek}
+
+
+\begin{pripomba}
+    Topologijo, ki jo kot baza podaja $\Theta$ bomo imenovali \emph{konjugiranostna topologija} in jo označili z $\mathcal{T}(G)$.
+    \pause
+\end{pripomba}
+
+\begin{dokaz}
+    \begin{itemize}
+        \item $\Theta$ je pokritje
+        \pause
+        \item$U_h$ in $U_k$ bazni množici
+        \newline
+        \pause
+        $x \in U_h \cap U_k \Rightarrow U_h = U_k$
+        \pause
+        \qed
+    \end{itemize}
+\end{dokaz}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Uporaba topologije $\mathcal{T}(G)$}
+
+\begin{izrek}
+    $G$ je komutativna natanko takrat, ko je $\mathcal{T}(G)$ Hausdorffova.
+    \pause
+\end{izrek}
+
+\begin{dokaz}
+    \begin{itemize}
+        \item[($\Rightarrow$)] $G$ komutativna $\Rightarrow U_x = \{x\}$
+        \newline
+        \pause
+        $\mathcal{T}(G)$ diskretna
+        \bigskip
+        \item[($\Leftarrow$)] $\mathcal{T}(G)$ Hausdorffova
+        \newline
+        \pause
+        Recimo da $y \neq x$ in $y \in U_x$
+        \newline
+        \pause
+        $x \in U_h, y \in U_k$ in $U_h \cap U_k = \emptyset$
+        \newline
+        \pause
+        $x \in U_x \cap U_h$ in $y \in U_x \cap U_k$ torej $U_h = U_x = U_h$
+        \pause
+        $\Rightarrow\!\Leftarrow$
+    \end{itemize}
+\end{dokaz}
+
+\end{frame}
+
+%\item[($\Rightarrow$)] $G$ je Abelova natanko takrat, ko $gh = hg $, za vsak $h,g \in G$, ekvivalentno $ghg^{-1} = h$, za vsak $g,h \in G$, kar pa ravno pomeni $U_h = \{ h\}$ za vsak $h \in G$.
+%To pomeni, da so v $\mathcal{T}(G)$ enojci odprti, torej je to diskretna topologija. Diskretna topologija je seveda Hausdorffova.
+%\item[($\Leftarrow$)] Privzemimo sedaj, da je $\mathcal{T}(G)$ Hausdorffov. Imejmo poljuben $x \in G$ in recimo, da obstaja $y \in U_x$ različen od $x$.
+%Ker je $G$ Hausdorffova obstajata odprti okolici $U_h$ in $U_k$, da $x \in U_h, y \in U_k$ in $U_h \cap U_k = \emptyset$.
+%Toda to pomeni, da $x \in U_x \cap U_h$ in $y \in U_x \cap U_k$ torej $U_h = U_x = U_h$, kar pa je v protislovju z $U_h \cap U_k = \emptyset$.
+%To pomeni, da $U_x = \{x\}$, kar pa je ravno ekvivalentno komutativnosti $G$.
+
+
+
+
+\begin{frame}
+\frametitle{Uporaba topologije $\mathcal{T}(G)$}
+
+\begin{izrek}
+    $H \triangleleft G$, če in samo če je $H$ zaprt v $\mathcal{T}(G)$.
+    \pause
+\end{izrek}
+
+\begin{dokaz}
+    ($\Rightarrow$)
+    $H \triangleleft G$, pokažemo da $G - H$ odprta.
+    \newline
+    \pause
+    Naj bo $x \in G - H$ in $U_x$ konjugiranostni razred $x$.
+    \newline
+    \pause
+    $U_x \cap H \neq \emptyset \Rightarrow \exists g \in G, h \in H: h = gxg^{-1}$.
+    \newline
+    \pause
+    Sledi $x = g^{-1}hg$, ker $H$ edinka potem $x \in H$.     
+    \pause
+    $\Rightarrow\!\Leftarrow$
+\end{dokaz}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Uporaba topologije $\mathcal{T}(G)$}
+    
+    \begin{izrek}
+        $H \triangleleft G$, če in samo če je $H$ zaprt v $\mathcal{T}(G)$.
+    \end{izrek}
+    
+    \begin{dokaz}
+        ($\Leftarrow$) Naj bo $H \subseteq G$ zaprta
+        \newline
+        \pause
+        Pokažimo da za vsak $h \in H$ tudi $U_h \subseteq H$, torej za $g \in G$ velja $ghg^{-1} \in H$ %kar je ravno definicija edinke
+        \newline
+        \pause
+        Recimo, da $\exists h \in H: U_h \nsubseteq H$
+        \newline
+        \pause
+        $x \in U_h \Rightarrow U_x = U_h$, torej $U_x$ seka $H$ in $G - H$.
+        \newline
+        \pause
+        Torej $x$ robna in ni v $H$
+        \pause
+        $\Rightarrow\!\Leftarrow$
+
+    \end{dokaz}
+
 
 \end{frame}
 
 
 
+\begin{frame}
+\frametitle{Uporaba topologije $\mathcal{T}(G)$}
+
+\begin{izrek}
+    Če je $\phi: G \rightarrow \Gamma$ homomorfizem grup, potem je praslika $\phi^{-1}(U_\gamma)$ odprta v $\mathcal{T}(G)$ za vsak $\gamma \in \Gamma$.
+    \pause
+\end{izrek}
+
+
+\begin{dokaz}
+    Zveznost preverimo na bazi: $\forall \gamma \in \Gamma: \phi^{-1}(U_\gamma) \in \mathcal{T}(G)$
+    \newline
+    \pause
+    Definiramo:
+    \[ S_\gamma = \bigcup_{\{g | \phi(g) \in U_\gamma\}} U_g \]
+    \pause
+    $t \in \phi^{-1}(U_\gamma) \Rightarrow \phi(t) \in U_\gamma \Rightarrow t \in U_t \subseteq S_\gamma$
+    \newline
+    \pause
+    Ker to velja za vsak $t$ je {\color{red} $\phi^{-1}(U_\gamma) \subseteq S_\gamma$}
+    
+\end{dokaz}
+\end{frame}
+
+\begin{frame}
+\frametitle{Uporaba topologije $\mathcal{T}(G)$}
+
+\begin{dokaz}
+    \[ S_\gamma = \bigcup_{\{g | \phi(g) \in U_\gamma\}} U_g \]
+    \pause
+    Naj bo zdaj $t \in S_\gamma$
+    \newline
+    \pause
+    Obstajata $g,h \in G$, da $\phi(g) \in U_\gamma$ in $t = hgh^{-1}$
+    \pause
+    \[\phi(t) = \phi(h)\phi(g)\phi(h^{-1}) = \phi(h)\phi(g)\phi(h)^{-1}\]
+    \pause
+    $\phi(t)$ konjugiran $\phi(g)$, sta v enakem razredu
+    \newline
+    \pause
+    $\phi(g) \in U_\gamma \Rightarrow \phi(t) \in U_\gamma \Rightarrow \phi(t) \in U_\gamma \Rightarrow t \in \phi^{-1}(U_\gamma)$
+    \newline
+    \pause
+    {\color{red} $S_\gamma \subseteq \phi^{-1}(U_\gamma)$}
+
+\end{dokaz}
+\end{frame}
 
 
 
 
-
-
-
-
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \end{document}

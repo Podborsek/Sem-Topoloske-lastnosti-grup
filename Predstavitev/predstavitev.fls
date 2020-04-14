@@ -355,21 +355,45 @@ INPUT D:\Gašper\Programi\MiKTeX\fonts\tfm\public\lm\ec-lmsso8.tfm
 INPUT D:\Gašper\Programi\MiKTeX\tex\latex\lm\t1lmr.fd
 INPUT D:\Gašper\Programi\MiKTeX\tex\latex\lm\t1lmr.fd
 INPUT D:\Gašper\Programi\MiKTeX\fonts\tfm\public\lm\ec-lmr10.tfm
+INPUT D:\Gašper\Programi\MiKTeX\fonts\tfm\public\lm\rm-lmss12.tfm
+INPUT D:\Gašper\Programi\MiKTeX\fonts\tfm\public\lm\rm-lmss10.tfm
+INPUT D:\Gašper\Programi\MiKTeX\fonts\tfm\public\lm\rm-lmss8.tfm
+INPUT D:\Gašper\Programi\MiKTeX\fonts\tfm\public\lm\lmmi12.tfm
+INPUT D:\Gašper\Programi\MiKTeX\fonts\tfm\public\lm\lmmi10.tfm
+INPUT D:\Gašper\Programi\MiKTeX\fonts\tfm\public\lm\lmmi7.tfm
+INPUT D:\Gašper\Programi\MiKTeX\fonts\tfm\public\lm\lmsy10.tfm
+INPUT D:\Gašper\Programi\MiKTeX\fonts\tfm\public\lm\lmsy10.tfm
+INPUT D:\Gašper\Programi\MiKTeX\fonts\tfm\public\lm\lmsy7.tfm
+INPUT D:\Gašper\Programi\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
+INPUT D:\Gašper\Programi\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
+INPUT D:\Gašper\Programi\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam7.tfm
+INPUT D:\Gašper\Programi\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
+INPUT D:\Gašper\Programi\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
+INPUT D:\Gašper\Programi\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
+INPUT D:\Gašper\Programi\MiKTeX\fonts\tfm\public\lm\ec-lmss10.tfm
+INPUT D:\Gašper\Programi\MiKTeX\fonts\tfm\public\lm\ec-lmss8.tfm
+INPUT D:\Gašper\Programi\MiKTeX\fonts\tfm\public\lm\ec-lmsso12.tfm
+INPUT D:\Gašper\Programi\MiKTeX\fonts\tfm\public\lm\ec-lmsso10.tfm
+INPUT D:\Gašper\Programi\MiKTeX\fonts\tfm\public\lm\ec-lmsso8.tfm
 OUTPUT d:\Gašper\Faks\2. letnik\Sem-Topoloske-lastnosti-grup\Predstavitev\predstavitev.nav
 OUTPUT d:\Gašper\Faks\2. letnik\Sem-Topoloske-lastnosti-grup\Predstavitev\predstavitev.toc
 OUTPUT d:\Gašper\Faks\2. letnik\Sem-Topoloske-lastnosti-grup\Predstavitev\predstavitev.snm
 INPUT d:\Gašper\Faks\2. letnik\Sem-Topoloske-lastnosti-grup\Predstavitev\predstavitev.aux
 INPUT d:\Gašper\Faks\2. letnik\Sem-Topoloske-lastnosti-grup\Predstavitev\predstavitev.out
 INPUT d:\Gašper\Faks\2. letnik\Sem-Topoloske-lastnosti-grup\Predstavitev\predstavitev.out
+INPUT D:\Gašper\Programi\MiKTeX\fonts\enc\dvips\lm\lm-mathit.enc
+INPUT D:\Gašper\Programi\MiKTeX\fonts\enc\dvips\lm\lm-rm.enc
 INPUT D:\Gašper\Programi\MiKTeX\fonts\enc\dvips\lm\lm-ec.enc
 INPUT D:\Gašper\Programi\MiKTeX\fonts\enc\dvips\lm\lm-mathex.enc
-INPUT D:\Gašper\Programi\MiKTeX\fonts\enc\dvips\lm\lm-rm.enc
 INPUT D:\Gašper\Programi\MiKTeX\fonts\enc\dvips\lm\lm-mathsy.enc
-INPUT D:\Gašper\Programi\MiKTeX\fonts\enc\dvips\lm\lm-mathit.enc
 INPUT D:\Gašper\Programi\MiKTeX\fonts\type1\public\lm\lmex10.pfb
 INPUT D:\Gašper\Programi\MiKTeX\fonts\type1\public\lm\lmex10.pfb
 INPUT D:\Gašper\Programi\MiKTeX\fonts\type1\public\lm\lmmi10.pfb
 INPUT D:\Gašper\Programi\MiKTeX\fonts\type1\public\lm\lmmi10.pfb
+INPUT D:\Gašper\Programi\MiKTeX\fonts\type1\public\lm\lmmi6.pfb
+INPUT D:\Gašper\Programi\MiKTeX\fonts\type1\public\lm\lmmi6.pfb
+INPUT D:\Gašper\Programi\MiKTeX\fonts\type1\public\lm\lmmi8.pfb
+INPUT D:\Gašper\Programi\MiKTeX\fonts\type1\public\lm\lmmi8.pfb
 INPUT D:\Gašper\Programi\MiKTeX\fonts\type1\public\lm\lmr10.pfb
 INPUT D:\Gašper\Programi\MiKTeX\fonts\type1\public\lm\lmr10.pfb
 INPUT D:\Gašper\Programi\MiKTeX\fonts\type1\public\lm\lmss10.pfb
@@ -380,9 +404,15 @@ INPUT D:\Gašper\Programi\MiKTeX\fonts\type1\public\lm\lmss8.pfb
 INPUT D:\Gašper\Programi\MiKTeX\fonts\type1\public\lm\lmss8.pfb
 INPUT D:\Gašper\Programi\MiKTeX\fonts\type1\public\lm\lmsso10.pfb
 INPUT D:\Gašper\Programi\MiKTeX\fonts\type1\public\lm\lmsso10.pfb
+INPUT D:\Gašper\Programi\MiKTeX\fonts\type1\public\lm\lmsso12.pfb
+INPUT D:\Gašper\Programi\MiKTeX\fonts\type1\public\lm\lmsso12.pfb
 INPUT D:\Gašper\Programi\MiKTeX\fonts\type1\public\lm\lmsso8.pfb
 INPUT D:\Gašper\Programi\MiKTeX\fonts\type1\public\lm\lmsso8.pfb
 INPUT D:\Gašper\Programi\MiKTeX\fonts\type1\public\lm\lmsy10.pfb
 INPUT D:\Gašper\Programi\MiKTeX\fonts\type1\public\lm\lmsy10.pfb
 INPUT D:\Gašper\Programi\MiKTeX\fonts\type1\public\lm\lmsy8.pfb
 INPUT D:\Gašper\Programi\MiKTeX\fonts\type1\public\lm\lmsy8.pfb
+INPUT D:\Gašper\Programi\MiKTeX\fonts\type1\public\amsfonts\symbols\msam10.pfb
+INPUT D:\Gašper\Programi\MiKTeX\fonts\type1\public\amsfonts\symbols\msam10.pfb
+INPUT D:\Gašper\Programi\MiKTeX\fonts\type1\public\amsfonts\symbols\msbm10.pfb
+INPUT D:\Gašper\Programi\MiKTeX\fonts\type1\public\amsfonts\symbols\msbm10.pfb
