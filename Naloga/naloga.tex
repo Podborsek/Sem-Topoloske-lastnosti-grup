@@ -55,28 +55,29 @@ Prva trditev, ki si jo bomo ogledali je karakterizacija komutativnosti s podgrup
 
 \begin{trditev}
     Naj bo $G$ grupa in $\Delta(G) = \{(g,g) \mid g \in G \} \subseteq G \times G$ njena diagonala.
-    Grupa $G$ je komutativna natanko takrat, ko je $\Delta(G)$ podgrupa edinka grupe $G$, $\Delta(G) \triangleleft G$.
+    Grupa $G$ je komutativna natanko takrat, ko je $\Delta(G)$ podgrupa edinka grupe $G \times G$, $\Delta(G) \triangleleft G \times G$.
 \end{trditev}
 
 
 \noindent
 {\em Dokaz:\/}
     \begin{itemize}
-        \item[($\Rightarrow$)] Ker je $G$ komutativna je seveda tudi $G \times G$ komutativna. Torej je vsaka njena podgrupa edinka.
-            Sedaj je trebna le še pokazati, da je $\Delta(G) \le G \times G$, kar je enostavno. Naj bosta $a = (\alpha, \alpha), b = (\beta, \beta) \in \Delta(G)$, potem:
+        \item[($\Rightarrow$)] Ker je $G$ komutativna, je seveda tudi $G \times G$ komutativna. Torej je vsaka njena podgrupa edinka.
+            Sedaj je treba le še pokazati, da je $\Delta(G) \le G \times G$, kar je enostavno. Naj bosta $a = (\alpha, \alpha), b = (\beta, \beta) \in \Delta(G)$, potem:
             \begin{gather*}
-                a \cdot b = (\alpha, \alpha) \cdot (\beta, \beta) = (\alpha \cdot \beta, \alpha \cdot \beta) \in \Delta(G), \\
-                (\alpha, \alpha) \cdot (\alpha^{-1}, \alpha^{-1}) = (\alpha \cdot \alpha^{-1}, \alpha \cdot \alpha^{-1}) = (1,1).
+                a \cdot b = (\alpha, \alpha) \cdot (\beta, \beta) = (\alpha \cdot \beta, \alpha \cdot \beta) \in \Delta(G).
             \end{gather*}
             Vidimo, da je $\Delta(G)$ zaprta za množenje. Dalje velja, da je inverz $(\alpha, \alpha)$ ravno $(\alpha^{-1}, \alpha^{-1}) \in \Delta(G)$, torej zaprta tudi za invertiranje.
         \item[($\Leftarrow$)] Naj bosta $\alpha, \beta$ elementa grupe $G$ z enoto $1$.
-        Potem so $(\alpha,1), (\alpha^{-1}, 1), (\beta, \beta) \in G \times G$ kjer
-            $(\alpha,1)^{-1} = (\alpha^{-1},1)$ ter $(\beta, \beta) \in \Delta(G)$. Potem lahko izračunamo:
+            Potem lahko izberemo pare $(\alpha,1), (\alpha^{-1}, 1), (\beta, \beta) \in G \times G$ kjer
+            $(\alpha,1)^{-1} = (\alpha^{-1},1)$ ter seveda $(\beta, \beta) \in \Delta(G)$. Torej lahko izračunamo:
             \[(\alpha,1) \cdot (\beta, \beta) \cdot (\alpha^{-1}, 1) = (\alpha\beta\alpha^{-1}, \beta).\]
-            Ker je $\Delta(G)$ edinka je zaprta za konjugiranje, kar pomeni $(\alpha\beta\alpha^{-1}, \beta) \in \Delta$,
+            Ker je $\Delta(G)$ edinka, je zaprta za konjugiranje, kar pomeni $(\alpha\beta\alpha^{-1}, \beta) \in \Delta$,
             torej je $\alpha\beta\alpha^{-1} = \beta$ oziroma $\alpha\beta = \beta\alpha$. Ker to velja za poljubna $\alpha, \beta$ je $G$ komutativna.
     \end{itemize}
 \qed
+
+%(\alpha, \alpha) \cdot (\alpha^{-1}, \alpha^{-1}) = (\alpha \cdot \alpha^{-1}, \alpha \cdot \alpha^{-1}) = (1,1).
 
 Sedaj, ko smo dokazali prvo trditev, si poglejmo še drugo. Najprej bomo definirali Hausdorffovo lastnost, potem pa jo bomo, kot zgoraj komutativnost, karakterizirali s pomočjo diagonale. 
 
@@ -85,7 +86,7 @@ Sedaj, ko smo dokazali prvo trditev, si poglejmo še drugo. Najprej bomo definir
 \end{definicija}
 
 Sledeča trditev poveže Hausdorffovo lastnost z diagonalo prostora.
-V naslednji trditvi sta glavni prva in tretja točka, druga je tam predvsem za lažje dokazovaje.
+V naslednji trditvi sta glavni prva in tretja točka, druga je tam predvsem za lažje dokazovanje.
 
 \begin{trditev}
     Naslednje izjave so ekvivalentne:
@@ -103,15 +104,15 @@ V naslednji trditvi sta glavni prva in tretja točka, druga je tam predvsem za l
     Sedaj pokažimo, da je $\Delta^C$ odprta v $X \times X$, kar je ekvivalentno temu, da je $\Delta$ zaprta.
     Naj bo $(x,y) \in \Delta^C$. Vemo, da obstaja $U$, ki je odprta okolica $x$, katere zaprtje ne vsebuje $y$.
     Potem je $U \times \overline{U}^C$ odprta okolica $(x,y)$, ki ne seka diagonale.
-    Privzemino zdaj da je diagonala zaprta. Če sta točki $x$ in $y$ različni, potem za $(x,y)$ obstaja škatlasta odprta okolica $U \times V$, ki ne seka diagonale.
+    Privzemino zdaj, da je diagonala zaprta. Če sta točki $x$ in $y$ različni, potem za $(x,y)$ obstaja škatlasta odprta okolica $U \times V$, ki ne seka diagonale.
     To pomeni, da sta $U$ in $V$ odprti in disjunktni, kar pa je ravno zahteva za Hausdorffovo lastnost. \qed
 
 
 
 Zdaj, ko smo dokazali obe trditvi, lahko opazimo zanimive paralele med komutativnostjo in Hausdorffovo lastnostjo. Obe lastnosti sta dokaj osnovni,
-če namreč pomislimo na najbolj preproste zglede grup nam verjetno na pamet padej najprej $\Z, \Q, \R$, ki so vse komutativne.
+če namreč pomislimo na najbolj preproste zglede grup nam verjetno na pamet padejo najprej $\Z, \Q$ in $\R$, ki so vse komutativne.
 Ravno tako se topološke prostore včasih motivira kot posplošitev metričnih prostorov, ki so seveda Hausdorffovi.
-Obe se da karakterizirati z diagonalo.
+Obe lastnosti se da karakterizirati z diagonalo.
 Vprašamo se, ali se da ti dve lastnosti kako konkretno povezati. Odgovor je da, kakor bomo videli v naslednjem poglavju.
 
 
@@ -121,14 +122,14 @@ Vprašamo se, ali se da ti dve lastnosti kako konkretno povezati. Odgovor je da,
 \section{Konjugiranostna topologija}
 
 Do povezave med komutativnostjo in Hausdorffovo lastnostjo bomo prišli prek konjugiranosti.
-V prvem podrazdelku bomo obnovili definicijo konjugiranosti in nekatere njene lastnosti. Potem bomo na naraven način definirali topologijo na grup.
-V drugem podrazdelku pa bomo videli kako postanejo preko prej definirane topologije mnogi topološki in algebraični pojmi ekvivalenti.
+V prvem podrazdelku bomo obnovili definicijo konjugiranosti in nekatere njene lastnosti. Potem bomo na naraven način definirali topologijo na vsaki grupi.
+V drugem podrazdelku pa bomo videli, kako postanejo preko prej definirane topologije mnogi topološki in algebraični pojmi ekvivalenti.
 
 
 
 \subsection{Konjugiranostni razredi}
 
-Konjugiranost je temeljna relacija na grupi. Elementi, ki so si konjugirani so si močno podobni in se, kar se tiče strukture grupe, skoraj enako obnašajo.
+Konjugiranost je temeljna relacija na grupi. Elementi, ki so si konjugirani, so si močno podobni in se, kar se tiče strukture grupe, skoraj enako obnašajo.
 
 \begin{definicija}
     Element $y$ grupe $G$ je \emph{konjugiran} elementu $x$ iz $G$, če obstaja tak $g \in G$, da je $y = gxg^{-1}$.
@@ -155,13 +156,13 @@ Konjugiranost je temeljna relacija na grupi. Elementi, ki so si konjugirani so s
 Za lažjo predstavo si poglejmo nekaj zgledov:
 
 \begin{zgled}
-        Če je $G$ komutativna potem za vsak $x,g \in G$ velja $gxg^{-1} = xgg^{-1} = x$, torej je vsak element sam v svojem konjugiranostnem razredu.
-        Še več, če je vsak element v svojem razredu potem za vsak $g,h \in G$ velja $h = ghg^{-1}$, ekvivalentno $hg = gh$.
+        Če je $G$ komutativna, potem za vsak $x,g \in G$ velja $gxg^{-1} = xgg^{-1} = x$, torej je vsak element sam v svojem konjugiranostnem razredu.
+        Še več, če je vsak element v svojem razredu, potem za vsak $g,h \in G$ velja $h = ghg^{-1}$, ekvivalentno $hg = gh$.
         Torej je grupa komutativna natanko takrat, ko je vsak element v svojem konjugiranostnem razredu.
 \end{zgled}
 
 \begin{zgled}
-    Kvaternionska grupa $Q = \{\pm 1, \pm i, \pm j, \pm k\}$ ni komutativna. Z enostavnim a zamudnim računanjem pokažemo,
+    Kvaternionska grupa $Q = \{\pm 1, \pm i, \pm j, \pm k\}$ ni komutativna. Z enostavnim, a zamudnim računanjem pokažemo,
     da so njeni konjugiranostni razredi $\{1\}, \{-1\}, \{\pm i\}, \{\pm j\}, \{\pm k\}$. 
 \end{zgled}
 
@@ -175,11 +176,11 @@ Opremljeni z razumevanjem konjugiranostnih razredov bomo lahko dokazali prvi pom
 
 \begin{izrek}
     Naj bo $G$ grupa in označimo $U_h = \{ghg^{-1} \mid g \in G \}$, to je konjugiranostni razred elementa $h$.
-    Množica $\Theta = \bigcup_{h \in G}\{U_h\}$ je baza topologije na $G$.
+    Množica $\Theta = \bigcup_{h \in G}\{U_h\}$ je baza neke topologije na $G$.
 \end{izrek}
 
 \begin{pripomba}
-    Topologijo, ki jo kot baza podaja $\Theta$ bomo imenovali \emph{konjugiranostna topologija} in jo označili z $\mathcal{T}(G)$.
+    Topologijo, ki jo kot baza podaja $\Theta$, bomo imenovali \emph{konjugiranostna topologija} in jo označili z $\mathcal{T}(G)$.
 \end{pripomba}
 
 
@@ -188,12 +189,12 @@ Opremljeni z razumevanjem konjugiranostnih razredov bomo lahko dokazali prvi pom
     Najprej moramo pokazati, da $\Theta$ pokritje cel $G$, kar je enostavno, preprosto vzamemo $\bigcup_{h \in G}U_h$.
     Ta množica je unija odprtih in vsebuje vsak $g \in G$, saj je ta gotovo v $U_g$.
     Naj bosta zdaj  $U_h$ in $U_k$ bazni množici. Pokazati moramo, da za vsak $x \in U_h \cap U_k$ obstaja bazna okolica $x$, ki je pod $U_h \cap U_k$.
-    Toda, če se konjugiranostna razreda sekata v eni točki potem sta enaka in tudi konjugiranostni razred te toče je enak, torej je $U_x = U_h = U_k$.
+    Toda, če se konjugiranostna razreda sekata v eni točki potem sta enaka in tudi konjugiranostni razred te točke je enak, torej je $U_x = U_h = U_k$.
     Torej je $x \in U_x \subseteq U_h \cap U_k$. Pokazali smo, da je $\Theta$ res baza neke topologije.
 \qed
 
 Tako smo na naraven način na vsaki grupi definirali topologijo.
-Kakšna ta topologija je in kako je povezana z lastnostmi grupe $G$ bomo videli v naslednjem razdelku.
+Kakšna ta topologija je in kako je povezana z lastnostmi grupe $G$, bomo videli v naslednjem razdelku.
 Dokazali bomo tesno povezavo med lastnostmi grupe $G$ in topologije $\mathcal{T}(G)$.
 
 
@@ -201,7 +202,7 @@ Dokazali bomo tesno povezavo med lastnostmi grupe $G$ in topologije $\mathcal{T}
 
 \subsection{Uporaba topologije $\mathcal{T}(G)$}
 
-Najprej lahko pokažemo, da sta si trditvi iz prvega razdelka tako podobni zato, ker sta komutativnost in Hausdorffov lastnost za $\mathcal{T}(G)$ tako rekoč enakovredni.
+Najprej lahko pokažemo, da sta si trditvi iz prvega razdelka tako podobni zato, ker sta komutativnost in Hausdorffova lastnost za $\mathcal{T}(G)$ tako rekoč enakovredni.
 
 \begin{izrek}
     $G$ je Abelova natanko takrat, ko je $\mathcal{T}(G)$ Hausdorffova.
@@ -210,16 +211,16 @@ Najprej lahko pokažemo, da sta si trditvi iz prvega razdelka tako podobni zato,
 \noindent
 {\em Dokaz:\/}
     \begin{itemize}
-        \item[($\Rightarrow$)] $G$ je Abelova natanko takrat, ko $gh = hg $, za vsak $h,g \in G$, ekvivalentno $ghg^{-1} = h$, za vsak $g,h \in G$, kar pa ravno pomeni $U_h = \{ h\}$ za vsak $h \in G$.
+        \item[($\Rightarrow$)] $G$ je Abelova natanko takrat, ko $gh = hg $ za vsak $h,g \in G$, oziroma $ghg^{-1} = h$ za vsak $g,h \in G$, kar pa ravno pomeni $U_h = \{ h\}$ za vsak $h \in G$.
         To pomeni, da so v $\mathcal{T}(G)$ enojci odprti, torej je to diskretna topologija. Diskretna topologija je seveda Hausdorffova.
         \item[($\Leftarrow$)] Privzemimo sedaj, da je $\mathcal{T}(G)$ Hausdorffov. Imejmo poljuben $x \in G$ in recimo, da obstaja $y \in U_x$ različen od $x$.
         Ker je $G$ Hausdorffova obstajata odprti okolici $U_h$ in $U_k$, da $x \in U_h, y \in U_k$ in $U_h \cap U_k = \emptyset$.
-        Toda to pomeni, da $x \in U_x \cap U_h$ in $y \in U_x \cap U_k$ torej $U_h = U_x = U_h$, kar pa je v protislovju z $U_h \cap U_k = \emptyset$.
+        Toda to pomeni, da $x \in U_x \cap U_h$ in $y \in U_x \cap U_k$ torej $U_h = U_x = U_k$, kar pa je v protislovju z $U_h \cap U_k = \emptyset$.
         To pomeni, da $U_x = \{x\}$, kar pa je ravno ekvivalentno komutativnosti $G$.
     \end{itemize} 
 \qed
 
-Trditvi, ki smo ju uporabili za motivacijo sta komutativnost ter Hausdorffovo lastnost karakterizirali prek diagonale.
+Trditvi, ki smo ju uporabili za motivacijo, sta komutativnost ter Hausdorffovo lastnost karakterizirali prek diagonale.
 V enem primeru je morala biti edinka, v drugem pa zaprta. Naslednji izrek pove, da sta tudi te dve lastnosti v $\mathcal{T}(G)$ enakovredni.
 
 \begin{izrek}
@@ -254,7 +255,7 @@ Pokažimo še, da je vsak homomorfizem grup glede na konjugiranostno topologijo 
     V ta namen definiramo
     \[ S_\gamma = \bigcup_{\{g | \phi(g) \in U_\gamma\}} U_g .\]
     $S_\gamma$ je unija odprtih množic torej je odprta. Z obojestransko inkluzijo pokažimo, da je $S_\gamma = \phi^{-1}(U_\gamma)$.
-    Če je $t \in \phi^{-1}(U_\gamma)$, potem je $\phi(t) \in U_\gamma$, torej je $t \in U_t \subseteq S_\gamma$. Ker to velja za vsak $t$ je $\phi^{-1}(U_\gamma) \subseteq S_\gamma$.
+    Če je $t \in \phi^{-1}(U_\gamma)$, potem je $\phi(t) \in U_\gamma$, torej je $t \in U_t \subseteq S_\gamma$. Ker to velja za vsak $t$, je $\phi^{-1}(U_\gamma) \subseteq S_\gamma$.
     Naj bo zdaj $t \in S_\gamma$. Potem obstajata taka $g,h \in G$, da je $\phi(g) \in U_\gamma$ in $t = hgh^{-1}$. Zdaj lahko uporabimo $\phi$ na $t$, da dobimo
     \[\phi(t) = \phi(h)\phi(g)\phi(h^{-1}) = \phi(h)\phi(g)\phi(h)^{-1} ,\] kjer smo pri drugem enačaju upoštevali, da je $\phi$ homomorfizem.
     Torej je $\phi(t)$ konjugiran z $\phi(g)$, kar pomeni, da sta v enakem konjugiranostnem razredu. Ker pa je $\phi(g) \in U_\gamma$, je potem tudi $\phi(t) \in U_\gamma$,
@@ -262,16 +263,16 @@ Pokažimo še, da je vsak homomorfizem grup glede na konjugiranostno topologijo 
 
 \qed
 
-Enostavno lahko premislimo, da implikacija v drugo smer ne velja. Vsaka konstantna preslikava je namreč zvezna. Če ne slika ravno v enoto, potem se seveda enota ne preslika v enoto,
-torej ne more biti homomorfizem.
+Enostavno lahko premislimo, da implikacija v drugo smer ne velja. Vsaka konstantna preslikava je namreč zvezna. Če ta ne slika ravno v enoto, potem se enota prve grupe ne preslika v enoto druge,
+torej preslikava ne more biti homomorfizem.
 
 \section{Pogled v druge algebraične strukture}
 
 Vprašamo se, ali lahko kaj podobnega definiramo tudi v kolobarjih? Analog podgrupe edinke v kolobarju je ideal, to je taka podgrupa za seštevanje $I$ v kolobarju $K$,
 da za vsak $i \in I$ in $k \in K$ velja $ik \in I$ in $ki \in I$. Hitro pa ugotovimo, da za ideale ne velja podobna trditev o diagonali kot za grupe. Če bi bila namreč diagonala
-ideal bi za poljubne $a,b,d \in K$ veljalo $(a,b)(d,d) \in \Delta(K)$, kar bi pomenilo $ad = bd$ oziroma $(a-b)d = 0$. To bi torej veljalo tudi pri $a = 1$ in $b = 0$,
+ideal, bi za poljubne $a,b,d \in K$ veljalo $(a,b)(d,d) \in \Delta(K)$, kar bi pomenilo $ad = bd$ oziroma $(a-b)d = 0$. To bi torej veljalo tudi pri $a = 1$ in $b = 0$,
 kar bi pomenilo, da je $d$ vedno $0$. To pa je z izjemo trivialnega kolobarja nemogoče.
-Na kolobarjih torej preprosta definicija kakšne podobne topologije ni mogoča. Ali morda vseeno obstaja kakšna bolj zapletena posplošitev pa je izven obsega te naloge.
+Na kolobarjih torej preprosta definicija kakšne podobne topologije ni mogoča. Ali morda vseeno obstaja kakšna bolj zapletena posplošitev, pa je izven obsega te naloge.
 
 
 \section*{Angleško-slovenski slovar strokovnih izrazov}
@@ -293,7 +294,7 @@ Na kolobarjih torej preprosta definicija kakšne podobne topologije ni mogoča. 
     \bibitem{Pav}
     P.~Pavešič, \emph{Splošna topologija}, DMFA -- založništvo, Ljubljana, 2017.
     \bibitem{Kohl}
-    T. Kohl, When Abelian = Hausdorff, \emph{The College Mathematics Journal}, 43, 3, 213-215
+    T. Kohl, When Abelian = Hausdorff, \emph{The College Mathematics Journal}, 43, 3, 213-215, 2012
 \end{thebibliography}
     
 

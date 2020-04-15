@@ -58,7 +58,7 @@
 
 \begin{trditev}
     Naj bo $G$ grupa in $\Delta(G) = \{(g,g) \mid g \in G \} \subseteq G \times G$ njena diagonala.
-    Grupa $G$ je komutativna natanko takrat, ko je $\Delta(G)$ podgrupa edinka grupe $G$, $\Delta(G) \triangleleft G$.
+    Grupa $G$ je komutativna natanko takrat, ko je $\Delta(G)$ podgrupa edinka grupe $G \times G$, $\Delta(G) \triangleleft G \times G$.
 \end{trditev}
 
 \end{frame}
@@ -87,6 +87,9 @@
             \newline
             \pause
             Torej:$\alpha\beta\alpha^{-1} = \beta \Rightarrow \alpha\beta = \beta\alpha$
+            \newline
+            \pause
+            \qed
     \end{itemize}
 \end{dokaz}
 
@@ -108,7 +111,7 @@
         \pause 
         \item[\rm (ii)] Za poljuben $x \in X$ je $\bigcap_{U \in \mathcal{U}} \overline{U} = \{x\}$, kjer je $\mathcal{U}$ družina vseh okolic $x$.
         \pause 
-        \item[\rm (iii)] Diagonala $\Delta(X) = \{(x,x) \mid x \in X \} $ je zaprt podprostor produkta $X \times X$
+        \item[\rm (iii)] Diagonala $\Delta(X) = \{(x,x) \mid x \in X \} $ je zaprt podprostor produkta $X \times X$.
     \end{itemize}
 \end{trditev}
 
@@ -132,6 +135,9 @@
     \newline
     \pause
     $(x,y) \in \Delta^C$ obstaja $U$, da $x \in U$ in $y \notin \overline{U}$
+    \newline
+    \pause
+    $(x,y) \in U \times \overline{U}^C$, ta ne seka $\Delta$
     \bigskip
     \newline
     \pause
@@ -178,6 +184,7 @@
         \bigskip
         \item<3->Tranzitivnost: $y = gxg^{-1}, z = hyh^{-1} \Rightarrow z = hgxg^{-1}h^{-1}$
     \end{itemize}
+    \onslide<4-> \qed
 \end{dokaz}
 
 \end{frame}
@@ -189,7 +196,7 @@
     Če je $G$ komutativna potem je vsak element v svojem razredu.
     \medskip
     \pause
-    \[ghg^{-1} = gg^{-1} = g\]
+    \[ghg^{-1} = hgg^{-1} = h\]
     \pause
     \[ghg^{-1} = h \Rightarrow gh = hg\]
     \pause
@@ -216,13 +223,13 @@
 \begin{izrek}
     Naj bo $G$ grupa in označimo $U_h = \{ghg^{-1} \mid g \in G \}$, to je konjugiranostni razred elementa $h$.
     \pause
-    Množica $\Theta = \bigcup_{h \in G}\{U_h\}$ je baza topologije na $G$.
+    Množica $\Theta = \bigcup_{h \in G}\{U_h\}$ je baza neke topologije na $G$.
     \pause
 \end{izrek}
 
 
 \begin{pripomba}
-    Topologijo, ki jo kot baza podaja $\Theta$ bomo imenovali \emph{konjugiranostna topologija} in jo označili z $\mathcal{T}(G)$.
+    Topologijo, ki jo kot baza podaja $\Theta$, bomo imenovali \emph{konjugiranostna topologija} in jo označili z $\mathcal{T}(G)$.
     \pause
 \end{pripomba}
 
@@ -258,6 +265,7 @@
         \pause
         $\mathcal{T}(G)$ diskretna
         \bigskip
+        \pause
         \item[($\Leftarrow$)] $\mathcal{T}(G)$ Hausdorffova
         \newline
         \pause
@@ -267,21 +275,13 @@
         $x \in U_h, y \in U_k$ in $U_h \cap U_k = \emptyset$
         \newline
         \pause
-        $x \in U_x \cap U_h$ in $y \in U_x \cap U_k$ torej $U_h = U_x = U_h$
+        $x \in U_x \cap U_h$ in $y \in U_x \cap U_k$ torej $U_h = U_x = U_k$
         \pause
         $\Rightarrow\!\Leftarrow$
     \end{itemize}
 \end{dokaz}
 
 \end{frame}
-
-%\item[($\Rightarrow$)] $G$ je Abelova natanko takrat, ko $gh = hg $, za vsak $h,g \in G$, ekvivalentno $ghg^{-1} = h$, za vsak $g,h \in G$, kar pa ravno pomeni $U_h = \{ h\}$ za vsak $h \in G$.
-%To pomeni, da so v $\mathcal{T}(G)$ enojci odprti, torej je to diskretna topologija. Diskretna topologija je seveda Hausdorffova.
-%\item[($\Leftarrow$)] Privzemimo sedaj, da je $\mathcal{T}(G)$ Hausdorffov. Imejmo poljuben $x \in G$ in recimo, da obstaja $y \in U_x$ različen od $x$.
-%Ker je $G$ Hausdorffova obstajata odprti okolici $U_h$ in $U_k$, da $x \in U_h, y \in U_k$ in $U_h \cap U_k = \emptyset$.
-%Toda to pomeni, da $x \in U_x \cap U_h$ in $y \in U_x \cap U_k$ torej $U_h = U_x = U_h$, kar pa je v protislovju z $U_h \cap U_k = \emptyset$.
-%To pomeni, da $U_x = \{x\}$, kar pa je ravno ekvivalentno komutativnosti $G$.
-
 
 
 
